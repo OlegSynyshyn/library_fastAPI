@@ -19,3 +19,10 @@ class Book(Base):
     pages = Column(Integer)
     author_id = Column(Integer, ForeignKey("authors.id"))
     author = relationship(Author, back_populates="books")
+
+
+
+class User(Base):
+    id = Column(Integer, primary_key=True, index=True)
+    login = Column(String(100), unique=True, index = True)
+    password = Column(String(200))
